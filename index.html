@@ -211,6 +211,22 @@
     *{ transition:none !important; animation:none !important; }
     html{ scroll-behavior:auto; }
   }
+
+  .float-contact{ position:fixed; right:20px; bottom:20px; z-index:60; display:flex; flex-direction:column; gap:12px; }
+  .float-btn{ width:52px; height:52px; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 20px rgba(23,25,22,0.22); text-decoration:none; transition:transform .15s ease, box-shadow .15s ease; }
+  .float-btn:hover{ transform:translateY(-3px) scale(1.04); box-shadow:0 12px 26px rgba(23,25,22,0.28); }
+  .float-btn.wa{ background:#25D366; }
+  .float-btn.mail{ background:var(--ink); }
+  .float-btn svg{ width:26px; height:26px; color:#fff; }
+  .contact-detail a{ color:inherit; text-decoration:none; border-bottom:1px solid var(--line-light); transition:border-color .15s ease, color .15s ease; }
+  .contact-detail a:hover{ border-color:var(--gold); color:var(--gold); }
+  .footer-col a.contact-link{ text-decoration:none; }
+  .footer-col a.contact-link:hover{ text-decoration:underline; }
+  @media (max-width:640px){
+    .float-contact{ right:14px; bottom:14px; }
+    .float-btn{ width:48px; height:48px; }
+    .float-btn svg{ width:23px; height:23px; }
+  }
 </style>
 </head>
 <body>
@@ -449,8 +465,8 @@
         <h2 data-i18n="contact.title">Enquire about this stock</h2>
         <p data-i18n="contact.sub">Tell us which resin and how much you need — we'll reply with availability and a price.</p>
         <div class="contact-detail"><span class="k" data-i18n="contact.k1">Location</span><span data-i18n="contact.v1">Johor Bahru, Johor, Malaysia</span></div>
-        <div class="contact-detail"><span class="k" data-i18n="contact.k2">Email</span><span>ndtechasia@gmail.com</span></div>
-        <div class="contact-detail"><span class="k" data-i18n="contact.k3">WhatsApp</span><span>+60 11-2626 6863</span></div>
+        <div class="contact-detail"><span class="k" data-i18n="contact.k2">Email</span><a href="mailto:ndtechasia@gmail.com">ndtechasia@gmail.com</a></div>
+        <div class="contact-detail"><span class="k" data-i18n="contact.k3">WhatsApp</span><a href="https://wa.me/601126266863" target="_blank" rel="noopener">+60 11-2626 6863</a></div>
         <div class="contact-detail"><span class="k" data-i18n="contact.k4">Hours</span><span data-i18n="contact.v4">Mon–Fri, 9:00–18:00 (GMT+8)</span></div>
       </div>
       <div class="reveal">
@@ -492,6 +508,16 @@
     </div>
   </section>
 
+
+  <div class="float-contact">
+    <a class="float-btn wa" href="https://wa.me/601126266863" target="_blank" rel="noopener" aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 004.75 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm0 18.14h-.01a8.2 8.2 0 01-4.19-1.15l-.3-.18-3.14.82.84-3.06-.2-.32a8.2 8.2 0 01-1.26-4.37c0-4.55 3.7-8.25 8.26-8.25 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 012.42 5.83c0 4.56-3.71 8.26-8.25 8.26zm4.52-6.19c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.46-1.37-1.71-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.13-.56-1.35-.77-1.84-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.08.15-1.18-.06-.11-.23-.17-.48-.29z"/></svg>
+    </a>
+    <a class="float-btn mail" href="mailto:ndtechasia@gmail.com" aria-label="Email">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+    </a>
+  </div>
+
 </main>
 
 <footer>
@@ -519,8 +545,8 @@
       <div class="footer-col">
         <h5 data-i18n="footer.h3">Contact</h5>
         <ul>
-          <li>ndtechasia@gmail.com</li>
-          <li>+60 11-2626 6863</li>
+          <li><a class="contact-link" href="mailto:ndtechasia@gmail.com">ndtechasia@gmail.com</a></li>
+          <li><a class="contact-link" href="https://wa.me/601126266863" target="_blank" rel="noopener">+60 11-2626 6863</a></li>
           <li data-i18n="contact.v1">Johor Bahru, Johor, Malaysia</li>
         </ul>
       </div>
